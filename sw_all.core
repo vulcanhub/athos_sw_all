@@ -1,0 +1,33 @@
+CAPI=2:
+
+name: "bci:sw:all:1.0"
+description: "all"
+
+filesets:
+    files_boot_rom:
+        depend:
+            - bci:sw:boot_rom:1.0
+    files_tests:
+        depend:
+            - bci:sw:tests:1.0
+    files_elf2vmem:
+        depend:
+            - bci:cad:elf2vmem:1.0
+    files_crt:
+        files:
+            - crt.S
+        file_type: swAsmSource
+    files_exts_common:
+        files:
+            - common/flash_crt.S :              {file_type: swAsmSource}
+            - common/ibex_interrupt_vectors.S : {file_type: swAsmSource}
+            - common/flash_link.ld:             {file_type: swLdSource}
+
+targets:
+  default:
+    filesets:
+      - files_boot_rom
+      - files_tests
+      - files_elf2vmem
+      - files_crt
+      - files_exts_common
