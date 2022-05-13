@@ -19,7 +19,7 @@ __DYNAMIC = 0;
 /**
  * Memory definitions are auto-generated.
  */
-INCLUDE top_athos_sw/sw/autogen/top_athos_memory.ld
+INCLUDE top/sw/autogen/top_athos_memory.ld
 
 /**
 /* Reserving space at the top of the RAM for the stack.
@@ -158,8 +158,6 @@ SECTIONS {
     _bss_end = .;
   } > ram_main
 
-/*  INCLUDE device/info_sections.ld
-*/
   INCLUDE boot_rom/info_sections.ld
 
 }
