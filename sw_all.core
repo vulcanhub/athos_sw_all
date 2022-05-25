@@ -1,5 +1,7 @@
+CAPI=2:
 ###############################################################################
 # Copyright (C) May 2022, Belmont Computing, Inc. -- All Rights Reserved
+# Licensed under the BCI-SLA. See LICENSE for details.
 #
 # NOTICE:  All information contained herein is, and remains the property of
 # Belmont Computing, Inc.  The intellectual and technical concepts contained
@@ -10,8 +12,6 @@
 # from Belmont Computing, Inc.
 ###############################################################################
 
-CAPI=2:
-
 name: "bci:athos_sw:all:1.0"
 description: "Collecting all Athos SW core bundles."
 
@@ -19,9 +19,9 @@ filesets:
     files_boot_rom:
         depend:
             - bci:athos_sw:boot_rom:1.0
-    files_tests:
+    files_apps:
         depend:
-            - bci:athos_sw:tests:1.0
+            - bci:athos_sw:apps:1.0
     files_elf2vmem:
         depend:
             - bci:eda:elf2vmem:1.0
@@ -39,7 +39,7 @@ targets:
   default:
     filesets:
       - files_boot_rom
-      - files_tests
+      - files_apps
       - files_elf2vmem
       - files_crt
       - files_exts_common
